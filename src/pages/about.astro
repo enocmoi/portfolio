@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="A propos | Enola Guerard" description="About Jeanine White Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Mon parcours et mes compétences."
+			>
+				<img
+					width="353"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Enola Guerard at work"
+				/>
+			</Hero>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>
+						Issue de l'<a href="https://isen-brest.fr/">ISEN Brest Yncrea Ouest</a>, je suis diplômée ingénieure du numérique et de l'électronique spécialisation IA.
+					</p>
+					
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Expériences</h2>
+				<div class="content">
+					<p>
+						Issue de l'<a href="https://isen-brest.fr/">ISEN Brest Yncrea Ouest</a>, je suis diplômée ingénieure du numérique et de l'électronique spécialisation IA.
+					</p>
+					<p>
+						J'ai pu acquérir de l'expérience dans mes différentes expériences :
+					</p>
+					<br>
+					<p> 
+						- Stage en <b>Data Science / Traitement du signal</b> (<i>Noviga, Nancy</i>).
+					</p>
+					<p>
+					J'ai pu modéliser et simuler en Python des arythmies cardiaques sur un signal d'électrocardiogramme pour un patient virtuel. 
+					</p>
+					<br>
+					<p> 
+						- Alternance en <b>Data Science</b> (<i>SinadEmploi, Rennes</i>). 
+					</p>
+					<p>
+						J'ai conçu un tableau de bord de A à Z permettant la visualisation des données sur l'emploi en France. 
+					</p>
+					<p>
+						Ce tableau de bord offrait la possibilité de visualiser les données en temps réel, notamment sur une carte interactive. 
+					</p>
+					<p>
+						J'ai utilisé les technologies suivantes : Python, Golang et Flask pour le développement du tableau de bord, ainsi que JavaScript, HTML et CSS pour l'interface utilisateur. Pour la gestion des données, j'ai eu recours à PostgreSQL, ElasticSearch et SQL. J'ai également acquis des compétences dans l'utilisation des outils de dataviz tels que Tableau et PowerBI.
+					</p>
+					<br>
+					<p>
+					 - Stage en <b>Intelligence Artificielle</b> (<i>STUnited, Danang, Vietnam</i>). 
+					</p>
+					<p>
+					 J'ai crée un système de détection et quantification du nombre de personnes dans une file d’attente. J'ai conçu un tableau de bord de A à Z permettant la visualisation des données sur l'emploi en France. 
+					</p>
+					<p>
+					Ce tableau de bord offrait la possibilité de visualiser les données en temps réel, notamment sur une carte interactive. 
+					</p>
+					<p>
+					J'ai utilisé les technologies suivantes : Python, Golang et Flask pour le développement du tableau de bord, ainsi que JavaScript, HTML et CSS pour l'interface utilisateur. Pour la gestion des données, j'ai eu recours à PostgreSQL, ElasticSearch et SQL. J'ai également acquis des compétences dans l'utilisation des outils de dataviz tels que Tableau et PowerBI.
+					</p>
+				
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Projets</h2>
+				<div class="content">
+					<p>Projet M1 : <b>Station de santé connectée</b></p>
+					<br>
+					<p> Réalisation d'une station de santé connectée
+						avec différents capteurs, permettant de réaliser un
+						diagnostic rapide à l'aide d'une IA.
+					</p>
+					<br> 
+					<p>Projet M2 : <b>Tabouret suiveur</b></p>
+					<br>
+					<p>  
+						Développement d'un tabouret suiveur de
+						personne assisté par intelligence artificielle, afin
+						de venir en aide aux personnes à mobilité réduite.						
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>Organisée, polyvalente, curieuse, esprit d'équipe, autonome</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
